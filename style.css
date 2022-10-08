@@ -3,11 +3,18 @@
 	padding: 0;
 }
 :root {
-	--bright-background: #efefef;
+	--bright-background: #faded0;
+	--bg-image: linear-gradient(
+		45deg,
+		#0fdfef 0%,
+		#bc70a4 50%,
+		#dafedb 75%,
+		#bfd641 100%
+	);
 	--background: var(--bright-background);
-	--shadow: var(--bright-shadow);
 	--font-color: rgba(10 10 150 /1);
 	--outline-color: #a50afa;
+	--shadow: #012345;
 }
 body,
 html {
@@ -15,6 +22,8 @@ html {
 	width: 100vw;
 	color: var(--font-color);
 	background-color: var(--background);
+	background-image: var(--bg-image);
+	background-attachment: fixed;
 }
 .img-box {
 	height: 200px;
@@ -34,6 +43,13 @@ html {
 }
 form {
 	max-width: 80%;
+	outline: 3px solid var(--outline-color);
+}
+form:hover {
+	box-shadow: 0 0 7px var(--shadow);
+}
+textarea {
+	background-color: transparent;
 	outline: 2px solid var(--outline-color);
 }
 .btn {
@@ -41,9 +57,9 @@ form {
 	width: fit-content;
 	padding-inline: 1ch;
 }
-#btn2 {
+/* #btn2 {
 	visibility: hidden;
-}
+} */
 footer > div {
 	position: sticky;
 	bottom: 0;
@@ -54,11 +70,18 @@ a {
 }
 @media (prefers-color-scheme: dark) {
 	:root {
-		--dark-background: #012345;
+		--bg-image: linear-gradient(
+			45deg,
+			rgba(39, 1, 113, 1) 0%,
+			rgba(22, 65, 97, 1) 41%,
+			rgba(17, 87, 92, 1) 63%,
+			rgba(85, 60, 15, 0.9895308465182948) 100%
+		);
+		--dark-background: #123456;
 		--font-color: #efefdd;
 		--background: var(--dark-background);
-		--shadow: var(--dark-shadow);
-		--outline-color: #f59a5a;
+		--shadow: #faded0;
+		--outline-color: #f59a7a;
 	}
 }
 @media screen and (min-width: 750px) {
@@ -66,4 +89,3 @@ a {
 		max-width: 60%;
 	}
 }
- >

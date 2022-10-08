@@ -28,6 +28,10 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="icon"
+			href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dshaw0004.github.io/codeQRcreator/"
+		/>
 		<script defer src="script.js"></script>
 	</head>
 
@@ -50,14 +54,14 @@
 				<br />
 				<input
 					type="button"
-					class="btn btn-outline-success"
+					class="btn btn-outline-success me-2"
 					id="btn1"
 					value="Generate"
 					onClick="log()"
 				/>
 				<input
-					type="button"
-					class="btn btn-outline-success"
+					type="reset"
+					class="btn btn-outline-success invisible"
 					id="btn2"
 					value="Clear"
 					onClick="clear()"
