@@ -27,8 +27,8 @@ html {
 }
 .img-box {
 	height: 200px;
+	visibility: hidden;
 	width: 100%;
-	/* padding-inline: cal(100%-75px); */
 	position: relative;
 }
 #img {
@@ -88,4 +88,24 @@ a {
 	form {
 		max-width: 60%;
 	}
+}
+
+.material-symbols-outlined {
+	width: 40px;
+	aspect-ratio: 1/1;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(40px);
+}
+nav {
+	border-bottom: 2px solid var(--shadow);
+}
+nav ul {
+	list-style: none;
+}
+#generator {
+}
+#reader {
+	display: none;
 }
