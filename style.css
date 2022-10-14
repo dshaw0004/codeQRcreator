@@ -57,9 +57,9 @@ textarea {
 	width: fit-content;
 	padding-inline: 1ch;
 }
-/* #btn2 {
+ #btn2 {
 	visibility: hidden;
-} */
+} 
 footer > div {
 	position: sticky;
 	bottom: 0;
