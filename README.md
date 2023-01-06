@@ -1,7 +1,14 @@
 # QR Code Generator
 
 This site can convert any text or url into QR Code using an open source free api.
+<<<<<<< HEAD
 Also it have a built in scanner to scan you code.
+=======
+#### website
+```
+https://dshaw0004.github.io/codeQRcreator/
+```
+>>>>>>> 119ad0c3e6394945f54d30a83fd14ad6bad4f079
 
 ---
 
