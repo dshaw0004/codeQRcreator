@@ -9,7 +9,15 @@
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
 		<meta name="description" content="Convert any text into QR Code" />
-		<meta name="keywords" content="QR CODE GENERATOR, QR CODE API" />
+		<meta
+			name="keywords"
+			content="QR CODE GENERATOR, QR CODE API, qr code scanner"
+		/>
+		<link
+			rel="shortcut icon"
+			href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dshaw0004.github.io/codeQRcreator"
+		/>
+		<link rel="manifest" href="manifest.json" />
 		<meta name="author" content="Dipankar Shaw" />
 		<meta property="og:title" content="QR Code Generator " />
 		<meta
@@ -18,7 +26,7 @@
 		/>
 		<meta
 			property="og:image"
-			content="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=qrgenerator.dipankarshaw.repl.co"
+			content="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dshaw0004.github.io/codeQRcreator"
 		/>
 		<link
 			rel="stylesheet"
@@ -37,12 +45,12 @@
 		<header class="container-md">
 			<blockquote>
 				<h1 class="text-center fs-1">QRCode Generator</h1>
-				<p class="text-center fs-3">Convert any text into QR Code</p>
+				<p class="text-center fs-3 heading-p">Convert any text into QR Code</p>
 			</blockquote>
 			<nav>
 				<ul class="row text-center">
 					<li class="col-6" id="li1">Generator</li>
-					<li class="col-6" id="li2">Reader/Scanner</li>
+					<li class="col-6" id="li2">Scanner</li>
 				</ul>
 			</nav>
 		</header>
@@ -78,18 +86,63 @@
 				</form>
 			</section>
 			<section id="reader" class="">
-				<form
-					enctype="multipart/form-data"
-					action="http://api.qrserver.com/v1/read-qr-code/"
-					method="POST"
-				>
-					<!-- MAX_FILE_SIZE (maximum file size in bytes) must precede the file input field used to upload the QR code image -->
-					<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-					<!-- The "name" of the input field has to be "file" as it is the name of the POST parameter -->
-					Choose QR code image to read/scan:
-					<input name="file" type="file" id="file" />
-					<input type="submit" value="Read QR code" onclick="decode" />
-				</form>
+				<video
+					class="mx-auto scanner-display my-4"
+					alt="scanner screen"
+				></video>
+				<div class="scanned-output-container my-2 text-center">
+					<textarea
+						class="scanned-output mx-auto my-2"
+						placeholder="Output here.."
+						disabled
+					></textarea>
+					<button class="rescan mx-auto my-2 btn btn-outline-success">
+						Start Scanning
+					</button>
+					<button class="stop-scan mx-auto my-2 btn btn-outline-success">
+						Stop Scanning
+					</button>
+				</div>
+				<script type="module">
+					const reader = document.querySelector("#reader");
+					const videoElem = document.querySelector("video");
+					const Rescan = document.querySelector(".rescan");
+					const stopScan = document.querySelector(".stop-scan");
+					const scannedOutputP = document.querySelector(".scanned-output");
+					import QrScanner from "./qr-scanner.min.js";
+					// do something with QrScanner
+					const qrScanner = new QrScanner(
+						videoElem,
+						(result) => scannedOutput(result.data),
+						{
+							onDecodeError: (error) => {
+								// camQrResult.textContent = error;
+								// camQrResult.style.color = "inherit";
+								console.log(error);
+							},
+							highlightScanRegion: true,
+							highlightCodeOutline: true,
+							maxScansPerSecond: 1,
+						}
+					);
+					Rescan.addEventListener("click", () => qrScanner.start());
+					stopScan.addEventListener("click", () => {
+						qrScanner.stop();
+						scannedOutputP.textContent = "";
+					});
+
+					function scannedOutput(para) {
+						scannedOutputP.textContent = para;
+						qrScanner.stop();
+					}
+
+					// window.onload = function () {
+					// 	while (getComputedStyle(reader).display == "unset") {
+					// 		console.log(getComputedStyle(reader).display);
+					// 		qrScanner.start();
+					// 	}
+					// };
+				</script>
 			</section>
 		</main>
 		<footer class="container-md">

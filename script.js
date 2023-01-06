@@ -2,6 +2,7 @@ const img = document.getElementById("img");
 const textbox = document.getElementById("input");
 const btn2 = document.getElementById("btn2");
 const imgbox = document.querySelector(".img-box");
+const headingP = document.querySelector(".heading-p");
 function log() {
 	let input = textbox.value;
 	if (input === "") {
@@ -49,12 +50,14 @@ function fetchFile(url) {
 		});
 }
 document.getElementById("li1").addEventListener("click", () => {
-	document.getElementById("generator").style.display = "block";
+	document.getElementById("generator").style.display = "unset";
 	document.getElementById("reader").style.display = "none";
+	headingP.textContent = "Convert any text into QR Code";
 });
 document.getElementById("li2").addEventListener("click", () => {
-	document.getElementById("reader").style.display = "block";
+	document.getElementById("reader").style.display = "unset";
 	document.getElementById("generator").style.display = "none";
+	headingP.textContent = "Scan any QR Code";
 });
 // document.getElementsByTagName("li").addEventListener("click", () => {
 // 	document.getElementsByTagName("section").classList.toggle("d-hide");

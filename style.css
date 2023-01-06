@@ -51,6 +51,7 @@ form:hover {
 textarea {
 	background-color: transparent;
 	outline: 2px solid var(--outline-color);
+	color: var(--font-color);
 }
 .btn {
 	margin-top: 1rem;
@@ -108,4 +109,18 @@ nav ul {
 }
 #reader {
 	display: none;
+	width: 100%;
 }
+#reader .scanned-output {
+	width: clamp(100px, 60%, 500px);
+	display: block;
+}
+video.scanner-display {
+	width: clamp(200px, 80%, 500px);
+	outline: 2px solid var(--outline-color);
+	display: block;
+	/* margin: auto; */
+}
+/* #reader * {
+	outline: 2px solid yellow;
+} */

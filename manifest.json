@@ -1,0 +1,43 @@
+{
+	"short_name": "codeQR",
+	"name": "CodeQR:create or scan a QR code effortlessly",
+	"icons": [
+		{
+			"src": ".https://api.qrserver.com/v1/create-qr-code/?size=512x512&data=https://dshaw0004.github.io/codeQRcreator",
+
+			"sizes": "512x512"
+		},
+		{
+			"src": "https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://dshaw0004.github.io/codeQRcreator",
+			"sizes": "256x256"
+		},
+		{
+			"src": "https://api.qrserver.com/v1/create-qr-code/?size=172x172&data=https://dshaw0004.github.io/codeQRcreator",
+			"sizes": "172x172"
+		},
+		{
+			"src": "https://api.qrserver.com/v1/create-qr-code/?size=128x128&data=https://dshaw0004.github.io/codeQRcreator",
+			"sizes": "128x128"
+		},
+		{
+			"src": "https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=https://dshaw0004.github.io/codeQRcreator",
+			"sizes": "64x64"
+		},
+		{
+			"src": "https://api.qrserver.com/v1/create-qr-code/?size=32x32&data=https://dshaw0004.github.io/codeQRcreator",
+			"sizes": "32x32"
+		},
+		{
+			"src": "https://api.qrserver.com/v1/create-qr-code/?size=16x16&data=https://dshaw0004.github.io/codeQRcreator",
+			"sizes": "16x16"
+		}
+	],
+	"id": "/codeQRcreator",
+	"start_url": "https://dshaw0004.github.io/codeQRcreator",
+	"background_color": "#c189ae",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#cce98b",
+
+	"description": "A free and effortless way to create or scan a QR Code"
+}
