@@ -55,12 +55,10 @@ textarea {
 }
 .btn {
 	margin-top: 1rem;
+	width: -moz-fit-content;
 	width: fit-content;
 	padding-inline: 1ch;
 }
-/* #btn2 {
-	visibility: hidden;
-} */
 footer > div {
 	position: sticky;
 	bottom: 0;
@@ -105,8 +103,6 @@ nav {
 nav ul {
 	list-style: none;
 }
-#generator {
-}
 #reader {
 	display: none;
 	width: 100%;
@@ -119,5 +115,4 @@ video.scanner-display {
 	width: clamp(200px, 80%, 500px);
 	outline: 2px solid var(--outline-color);
 	display: block;
-	/* margin: auto; */
 }
