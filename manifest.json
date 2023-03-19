@@ -34,7 +34,7 @@
 	],
 	"id": "/codeQRcreator",
 	"start_url": "https://dshaw0004.github.io/codeQRcreator",
-	"background_color": "#c189ae",
+	"background_color": "#def",
 	"display": "standalone",
 	"scope": "/",
 	"theme_color": "#def",
